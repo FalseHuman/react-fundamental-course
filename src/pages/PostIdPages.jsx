@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom';
 import PostService from "../components/API/PostService";
 import useFetching from "../hooks/useFetching";
 import Loader from '../components/UI/loader/Loader'
+import PostIdPagesComment from "./PostidPagesComment";
 
 const PostIdPages = (props) => {
     const params = useParams();
@@ -18,6 +19,8 @@ const PostIdPages = (props) => {
         <div>
             <h1>post page with {params.id}</h1>
             <p>{post.title} {post.body}</p>
+            <h1>Comments</h1>
+            <PostIdPagesComment />
             {/* {isLoading 
                 ? <Loader />
                 : <p>{post.title} {post.body}</p>
